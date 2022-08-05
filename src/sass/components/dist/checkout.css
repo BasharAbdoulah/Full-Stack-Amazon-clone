@@ -1,0 +1,56 @@
+.ad-image {
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.checkout {
+  display: flex;
+  padding: 20px;
+  background-color: #fff;
+  height: max-content;
+}
+@media (max-width: 767px) {
+  .checkout {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.checkout .checkout-left .is-empty {
+  margin-top: 40px;
+  text-align: center;
+  font-weight: 600;
+}
+.checkout .checkout-left .checkout-message {
+  text-align: left;
+  margin: 10px 0 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #232323;
+}
+.checkout .checkout-left .checkout-title {
+  margin-right: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  color: #424242;
+}
+@media (max-width: 767px) {
+  .checkout .checkout-left .checkout-title h2 {
+    font-size: 16px;
+  }
+}
+
+.subtotal {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dbdbdb;
+  padding: 20px;
+  background-color: #f2f2f2;
+  width: 290px;
+  margin-left: 10px;
+  border-radius: 4px;
+  row-gap: 10px;
+}
+.subtotal button {
+  padding: 4px;
+}

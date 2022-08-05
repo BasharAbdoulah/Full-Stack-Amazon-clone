@@ -1,0 +1,36 @@
+// import mixins
+@use "../helpers/mixins" as *;
+
+.home {
+
+    position: relative;
+    .home-container {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+.home-image {
+    @include breakpoints(mobile) {
+        margin-bottom: -60px;
+    }
+    position: relative;
+    width: 100%;
+    z-index: -1;
+    margin-bottom: -200px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0,));
+}
+
+.home-row {
+    @include breakpoints(mobile) {
+        flex-direction: column;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    row-gap: 20px;
+    z-index: 1;
+    margin: 20px 10px;
+
+}

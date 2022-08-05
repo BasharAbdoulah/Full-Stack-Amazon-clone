@@ -1,0 +1,44 @@
+// Import colors varibals
+@use "../vaiables/colors" as *;
+// import mixins
+@use "../helpers/mixins" as *;
+
+.orders {
+
+    h2 {
+        margin-top: 30px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .orders-container {
+        width: 50%;
+        margin: 40px auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: center;
+        @include breakpoints(mobile) {
+            width: 85%;
+        }
+
+        .order {
+            background-color: #fff;
+            padding: 20px;
+            width: 100%;
+
+            h3 {
+                text-align: right;
+                color: #6a6a6a;
+
+            }
+        }
+
+        .order-details {
+            text-align: left;
+
+            p {
+                margin-top: 10px;
+            }
+        }
+    }
+}

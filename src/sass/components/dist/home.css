@@ -1,0 +1,35 @@
+.home {
+  position: relative;
+}
+.home .home-container {
+  width: 90%;
+  margin: auto;
+}
+
+.home-image {
+  position: relative;
+  width: 100%;
+  z-index: -1;
+  margin-bottom: -200px;
+  mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+}
+@media (max-width: 767px) {
+  .home-image {
+    margin-bottom: -60px;
+  }
+}
+
+.home-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 20px;
+  z-index: 1;
+  margin: 20px 10px;
+}
+@media (max-width: 767px) {
+  .home-row {
+    flex-direction: column;
+  }
+}

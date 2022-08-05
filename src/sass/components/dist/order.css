@@ -1,0 +1,41 @@
+.btn {
+  border: 1px solid #a88734;
+  border-radius: 3px;
+  background-color: #f0c14b;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 1px 4px;
+}
+
+.orders h2 {
+  margin-top: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.orders .orders-container {
+  width: 50%;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .orders .orders-container {
+    width: 85%;
+  }
+}
+.orders .orders-container .order {
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+}
+.orders .orders-container .order h3 {
+  text-align: right;
+  color: #6a6a6a;
+}
+.orders .orders-container .order-details {
+  text-align: left;
+}
+.orders .orders-container .order-details p {
+  margin-top: 10px;
+}

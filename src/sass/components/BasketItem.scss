@@ -1,0 +1,67 @@
+// import mixins
+@use "../helpers/mixins" as *;
+
+.basket {
+    display: flex;
+    column-gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+
+    @include breakpoints(mobile) {
+        height: 155px;
+    }
+
+    img {
+        @include breakpoints(mobile) {
+            height: 100%;
+            max-width: 155px;
+            width: fit-content;
+        }
+        width: 150px;
+    }
+
+    .basket-item-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        p {
+            @include breakpoints(mobile) {
+                font-size: 13px;
+                font-weight: 600;
+                margin: 2px;
+                line-height: 15px;
+            }
+            text-align: left;
+            margin: 10px;
+            max-width: 250px;
+            line-height: 20px;
+        }
+
+        button {
+            @include breakpoints(mobile) {
+                font-size: 11px;
+            }
+            width: fit-content;
+        }
+    }
+    .basket-item-rating {
+        display: flex;
+
+        p {
+            @include breakpoints(mobile) {
+                margin: 0 0 5px;
+            }
+            margin: 10px 0px;
+        }
+
+    }
+}
+
+.basket:last-child {
+    border-bottom: none;
+}

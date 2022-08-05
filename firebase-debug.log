@@ -1,0 +1,41 @@
+[debug] [2022-07-31T13:15:11.394Z] ----------------------------------------------------------------------
+[debug] [2022-07-31T13:15:11.396Z] Command:       /usr/local/bin/node /usr/local/bin/firebase login
+[debug] [2022-07-31T13:15:11.397Z] CLI Version:   11.4.0
+[debug] [2022-07-31T13:15:11.397Z] Platform:      darwin
+[debug] [2022-07-31T13:15:11.397Z] Node Version:  v16.14.2
+[debug] [2022-07-31T13:15:11.403Z] Time:          Sun Jul 31 2022 16:15:11 GMT+0300 (Arabian Standard Time)
+[debug] [2022-07-31T13:15:11.404Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-07-31T13:15:11.407Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=813077038&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2022-07-31T13:15:13.635Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-07-31T13:15:13.635Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-07-31T13:15:22.227Z] >>> [apiv2][query] POST https://accounts.google.com/o/oauth2/token [none]
+[debug] [2022-07-31T13:15:22.228Z] >>> [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[debug] [2022-07-31T13:15:22.476Z] Token Fetch Error: FirebaseError: Failed to make request to https://accounts.google.com/o/oauth2/token
+    at RetryOperation._fn (/usr/local/lib/node_modules/firebase-tools/lib/apiv2.js:242:31)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[debug] [2022-07-31T13:15:22.481Z] >>> [apiv2][query] POST https://auth.firebase.tools/attest [none]
+[debug] [2022-07-31T13:15:22.481Z] >>> [apiv2][body] POST https://auth.firebase.tools/attest {"session_id":"a30fe953-396f-43df-bcad-f890e5d1f2a6"}
+[debug] [2022-07-31T13:15:24.646Z] <<< [apiv2][status] POST https://auth.firebase.tools/attest 200
+[debug] [2022-07-31T13:15:24.647Z] <<< [apiv2][body] POST https://auth.firebase.tools/attest {"token":"3GbJWprDKg3xU8tqHTkeaKN2PFAgMkFqkhhlOEmZ8j0"}
+[info] 
+[info] To sign in to the Firebase CLI:
+[info] 
+[info] 1. Take note of your session ID:
+[info] 
+[info]    A30FE
+[info] 
+[info] 2. Visit the URL below on any device and follow the instructions to get your code:
+[info] 
+[info]    https://auth.firebase.tools/login?code_challenge=9VW-zL5b9EpZlWMy6xaMlN7xW1tAFzOQVmzKeiQE1ls&session=a30fe953-396f-43df-bcad-f890e5d1f2a6&attest=3GbJWprDKg3xU8tqHTkeaKN2PFAgMkFqkhhlOEmZ8j0
+[info] 
+[info] 3. Paste or enter the authorization code below once you have it:
+[info] 

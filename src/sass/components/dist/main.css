@@ -1,0 +1,80 @@
+.btn {
+  border: 1px solid #a88734;
+  border-radius: 3px;
+  background-color: #f0c14b;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 1px 4px;
+}
+
+.header {
+  background-color: black;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70px;
+}
+.header .header-logo {
+  width: 110px;
+  height: 30px;
+  cursor: pointer;
+}
+.header .header-search {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  width: 62%;
+}
+.header .header-search input {
+  padding: 0px 8px;
+  height: 100%;
+  width: 90%;
+  border: 1px solid #ddd;
+  outline: none;
+}
+.header .header-search .search-icon {
+  background-color: #f0c14b;
+  color: #000;
+  height: 38px;
+  width: 4%;
+  font-size: 2px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.header .header-nav {
+  display: flex;
+  color: #fff;
+  height: 40px;
+  column-gap: 20px;
+}
+.header .header-nav .header-option {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  column-gap: 10px;
+  justify-content: center;
+  cursor: pointer;
+}
+.header .header-nav .header-option.thebag {
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+}
+.header .header-nav .option-line-one {
+  font-size: 12px;
+  color: #b1b1b1;
+  font-weight: 600;
+  margin: 0;
+}
+.header .header-nav .option-line-two {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+}
+.header .header-nav a {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}

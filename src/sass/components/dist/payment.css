@@ -1,0 +1,74 @@
+.payment .payment-container {
+  padding: 10px 0;
+  width: 95%;
+  margin: 30px auto;
+  background-color: #fff;
+}
+@media (max-width: 767px) {
+  .payment .payment-container h1 {
+    font-size: 20px;
+  }
+}
+.payment .payment-container .payment-section {
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .payment .payment-container .payment-section {
+    flex-direction: column;
+  }
+}
+.payment .payment-container .payment-section p {
+  font-size: 12px;
+  color: #616161;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.payment .payment-container .payment-section .payment-address p {
+  text-align: left;
+  margin: 5px 0 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .payment .payment-container .payment-section .payment-address p {
+    font-size: 12px;
+  }
+}
+.payment .payment-container .payment-section .payment-title {
+  flex: 0.2;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .payment .payment-container .payment-section .payment-title h3 {
+    font-size: 14px;
+  }
+}
+.payment .payment-container .payment-section .payment-items, .payment .payment-container .payment-section .payment-address, .payment .payment-container .payment-section .payment-details {
+  flex: 0.8;
+}
+.payment .payment-container .payment-section .payment-items .basket, .payment .payment-container .payment-section .payment-address .basket, .payment .payment-container .payment-section .payment-details .basket {
+  border: none;
+}
+.payment .payment-container .payment-section .payment-details {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .payment .payment-container .payment-section .payment-details {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 767px) {
+  .payment .payment-container .payment-section .payment-details h3 {
+    font-size: 14px;
+  }
+}
