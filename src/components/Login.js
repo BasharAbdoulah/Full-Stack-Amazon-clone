@@ -6,7 +6,7 @@ import {
 } from "firebase/auth";
 import logo from "../images/png-clipart-logo-amazon-com-brand-flipkart-others-text-orange-thumbnail-removebg-preview.png";
 import "../sass/components/login.scss";
-
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { auth, db } from "../firebaseFiles";
 import { useStateValue } from "./StateProvider";
 
@@ -84,6 +84,10 @@ function Login() {
     };
     return (
         <div className="login">
+            <ArrowForwardIcon
+                className="arrow"
+                onClick={() => setIsLoginForm(true)}
+            />
             <Link to="/">
                 <img className="login-logo" src={logo} />
             </Link>
@@ -136,7 +140,7 @@ function Login() {
                         <a>Conditions</a> of Use and <a>Privacy Notice.</a>
                     </p>
 
-                    <button className="create-btn btn" onClick={register}>
+                    <button className="create-btn btnn" onClick={register}>
                         {registerLoading ? "Please wait.." : "Create Acount"}
                     </button>
                 </div>
@@ -160,7 +164,7 @@ function Login() {
                             onChange={(e) => setPassword(e.target.value)}
                         />
 
-                        <button className="btn" onClick={signIn}>
+                        <button className="btnn" onClick={signIn}>
                             {loading ? "Loading..." : "Sign in"}
                         </button>
                     </form>

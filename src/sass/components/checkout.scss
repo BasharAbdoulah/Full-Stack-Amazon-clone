@@ -58,6 +58,10 @@
     margin-left: 10px;
     border-radius: 4px;
     row-gap: 10px;
+    
+    @include breakpoints(mobile) {
+        margin-top: 20px;
+    }
     button {
         padding: 4px;
     }

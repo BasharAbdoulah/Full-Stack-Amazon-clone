@@ -1,8 +1,9 @@
 import React from "react";
 import "../sass/components/BasketItem.scss";
 import { useStateValue } from "./StateProvider";
+import StarRateIcon from "@mui/icons-material/StarRate";
 
-function BasketItem({ title, image, price, rating, id, hideButton }) {
+function BasketItem({ title, image, price, rating, id, quantity, hideButton }) {
     const [{ basket }, dispatch] = useStateValue();
     const rateNum = Math.floor(rating);
     const rateArray = [];
@@ -25,15 +26,19 @@ function BasketItem({ title, image, price, rating, id, hideButton }) {
                 <p>{title}</p>
                 <p className="basket-item-price">
                     <small>$</small>
-                    <strong>{price}</strong>
+                    <strong>{price}</strong> <br />
                 </p>
+                <strong>Quantity: {quantity}</strong>
                 <div className="basket-item-rating">
                     {rateArray.map((i) => (
-                        <p key={Math.random()}>🌟</p>
+                        <StarRateIcon
+                            className="starRate"
+                            key={Math.random()}
+                        />
                     ))}
                 </div>
                 {!hideButton && (
-                    <button className="btn" onClick={removeFromBasket}>
+                    <button className="btnn" onClick={removeFromBasket}>
                         Remove From Basket
                     </button>
                 )}

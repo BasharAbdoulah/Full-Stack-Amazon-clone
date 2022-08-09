@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import BasketItem from "./BasketItem";
 import { useStateValue } from "./StateProvider";
 import "../sass/components/payment.scss";
-import "../sass/vaiables/_colors.scss";
+import "../sass/vaiables/colors.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
 import StripeChecout from "react-stripe-checkout";
@@ -16,6 +15,7 @@ function Payment() {
     const history = useNavigate();
     const [{ basket, newUsername, user }, dispatch] = useStateValue();
 
+    // payment function and save the order in database
     const makePayment = async () => {
         const headers = {
             "Content-Type": "application/json",
@@ -24,7 +24,7 @@ function Payment() {
         try {
             // IF the user have signed in then save his orders
             if (user) {
-                fetch(`http://localhost:4000/payment`, {
+                fetch(`https://amazon-clone-b.herokuapp.com/payment`, {
                     method: "POST",
                     headers: headers,
                     body: JSON.stringify({
@@ -85,6 +85,7 @@ function Payment() {
                                 title={item.title}
                                 image={item.image}
                                 price={item.price}
+                                quantity={item.quantity}
                                 rating={item.rating}
                                 id={item.id}
                                 key={item.id}
@@ -103,7 +104,6 @@ function Payment() {
                             token={makePayment}
                             name=""
                             amount={getBasketTotal(basket) * 100}
-                            shippingAddress
                         />
                         <div className="payment-price-container">
                             <CurrencyFormat
@@ -119,8 +119,8 @@ function Payment() {
                         </div>
                     </div>
                     <p>
-                        Card number for test ={">"} 4242 4242 4242 4242 <br />{" "}
-                        and use anthing in other fields{" "}
+                        Card number for test: 4242 4242 4242 4242 <br /> and use
+                        anthing in other fields{" "}
                     </p>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../sass/components/header.scss";
 import logo from "../images/358-3584545_rolling-pin-clip-art.png";
 import SearchIcon from "@mui/icons-material/Search";
@@ -12,19 +12,39 @@ import MenuIcon from "@mui/icons-material/Menu";
 function Header() {
     const useRefe = useRef();
     const [{ basket, newUsername, user }, dispatch] = useStateValue();
+    const [isSignIn, setIsSignIn] = useState(false);
 
+    // Sign out click
     const handleAuthentication = () => {
+        setIsSignIn(false);
         if (user) {
             auth.signOut();
         }
     };
+
+    // Check if user signed in
+    useEffect(() => {
+        if (newUsername) {
+            setIsSignIn(true);
+        }
+    }, [newUsername]);
+
+    // Disaple scrolling finction and toggle menu
+    const showMenu = () => {
+        useRefe.current.classList.toggle("show");
+        document.body.classList.add("stop-scrolling");
+    };
+
+    // Disaple scrolling finction and toggle menu
+    const hideMenu = () => {
+        useRefe.current.classList.toggle("show");
+        document.body.classList.remove("stop-scrolling");
+    };
+
     return (
         <header className="header">
             <div to="/" className="logo-container">
-                <MenuIcon
-                    className="menu-icon"
-                    onClick={() => useRefe.current.classList.toggle("show")}
-                />
+                <MenuIcon className="menu-icon" onClick={showMenu} />
                 <Link to="/checkout" className="bagicon-mobile">
                     <ShoppingBagIcon className="shoping-bag" />
                     <span className="option-line-two">{basket.length}</span>
@@ -39,19 +59,16 @@ function Header() {
                 <SearchIcon className="search-icon" />
             </div>
             <div className="header-nav" ref={useRefe}>
-                <div
-                    className="close"
-                    onClick={() => useRefe.current.classList.toggle("show")}
-                >
+                <div className="close" onClick={hideMenu}>
                     X
                 </div>
-                <Link to={!user && "/login"}>
+                <Link to={!user && "/login"} onClick={hideMenu}>
                     <div
                         onClick={handleAuthentication}
                         className="header-option"
                     >
                         <p className="option-line-one">
-                            Hello {newUsername ? newUsername : "Guest"}
+                            Hello {isSignIn ? newUsername : "Guest"}
                         </p>
                         <span className="option-line-two">
                             {user ? "Sign Out" : "Sign In"}
@@ -59,7 +76,7 @@ function Header() {
                     </div>
                 </Link>
                 <Link to="/orders">
-                    <div className="header-option">
+                    <div className="header-option" onClick={hideMenu}>
                         <p className="option-line-one">Returns</p>
                         <span className="option-line-two">& Orders</span>
                     </div>

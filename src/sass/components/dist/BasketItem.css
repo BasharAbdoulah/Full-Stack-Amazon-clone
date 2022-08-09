@@ -1,16 +1,28 @@
+.btnn {
+  border: 1px solid #a88734;
+  border-radius: 6px;
+  background-color: #f0c14b;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 1px 4px;
+}
+
 .basket {
   display: flex;
   column-gap: 20px;
+  margin-top: 15px;
   justify-content: flex-start;
   align-items: center;
-  border-bottom: 1px solid #ddd;
   padding: 20px;
   overflow: hidden;
   margin-top: 10px;
+  background-color: #f8fbfe;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 7px 0px #0000001a;
 }
 @media (max-width: 767px) {
   .basket {
-    height: 155px;
+    padding: 15px 8px;
   }
 }
 .basket img {
@@ -18,15 +30,17 @@
 }
 @media (max-width: 767px) {
   .basket img {
-    height: 100%;
-    max-width: 155px;
-    width: fit-content;
+    max-width: 40%;
+    width: 32%;
   }
 }
 .basket .basket-item-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+.basket .basket-item-info strong {
+  font-size: 14px;
 }
 .basket .basket-item-info p {
   text-align: left;
@@ -36,14 +50,16 @@
 }
 @media (max-width: 767px) {
   .basket .basket-item-info p {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     margin: 2px;
     line-height: 15px;
   }
 }
 .basket .basket-item-info button {
+  font-size: 14px;
   width: fit-content;
+  margin: 4px;
 }
 @media (max-width: 767px) {
   .basket .basket-item-info button {
@@ -51,14 +67,18 @@
   }
 }
 .basket .basket-item-rating {
+  margin: 10px 0;
   display: flex;
+  background-color: #fffdeb;
+  border-radius: 4px;
+  width: fit-content;
 }
-.basket .basket-item-rating p {
-  margin: 10px 0px;
+.basket .basket-item-rating .starRate {
+  color: #f0c14b;
 }
 @media (max-width: 767px) {
-  .basket .basket-item-rating p {
-    margin: 0 0 5px;
+  .basket .basket-item-rating .starRate {
+    font-size: 16px;
   }
 }
 

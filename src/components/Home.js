@@ -3,6 +3,7 @@ import primeImg from "../images/amazon-prime.jpeg";
 import "../sass/components/home.scss";
 import "../sass/components/spinner.scss";
 import Product from "./Product";
+import Slider from "./Slider";
 import { useStateValue } from "./StateProvider";
 
 export const productsContext = createContext();
@@ -16,12 +17,15 @@ function Home() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const respon = await fetch("http://localhost:4000/orders");
+                const respon = await fetch(
+                    "https://amazon-clone-b.herokuapp.com/orders"
+                );
                 const json = await respon.json();
+                // filtring orders who comes from DB  for current user
                 const ordersForEmail = await json.filter(
                     (item) => item.order.email === user.email
                 );
-                // i pass the username comes from db to reducer to recive it in another comps
+                // i pass the username comes from db to reducer.js to recive it in another comps
                 const passingUsername = await dispatch({
                     type: "REGISTER_ACTION",
                     userName: ordersForEmail[0].order.userName,
@@ -54,8 +58,9 @@ function Home() {
                         <div className="loading-spinner"></div>
                     </div>
                 )}
+
+                <Slider />
                 <div className="home-container">
-                    <img className="home-image" src={primeImg} />
                     <div className="home-row">
                         {products.slice(0, 2).map((prod) => {
                             return (

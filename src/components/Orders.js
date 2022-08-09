@@ -1,8 +1,5 @@
-import { async } from "@firebase/util";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../sass/components/order.scss";
-import BasketItem from "./BasketItem";
 import Order from "./Order";
 import { useStateValue } from "./StateProvider";
 
@@ -14,7 +11,9 @@ function Orders() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const respon = await fetch("http://localhost:4000/orders");
+                const respon = await fetch(
+                    "https://amazon-clone-b.herokuapp.com/orders"
+                );
                 const json = await respon.json();
                 const ordersForEmail = await json.filter(
                     (item) => item.order.email === user.email
@@ -29,7 +28,6 @@ function Orders() {
         fetchData();
     }, [user]);
 
-    console.log();
     return (
         <div className="orders">
             <h2>The Orders</h2>

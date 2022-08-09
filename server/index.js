@@ -6,10 +6,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import productModel from "./models/Products.js";
 import { default as mongoose } from "mongoose";
-import fileURLToPath from "url";
 import path from "path";
-
-const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // API
 
@@ -30,6 +27,10 @@ mongoose
     })
     .then(() => console.log("DB is conccted"))
     .catch((err) => console.log(err));
+
+app.get("/test", (req, res) => {
+    res.send("Hello from Node.js");
+});
 
 app.get("/orders", async (req, res) => {
     try {
@@ -53,12 +54,6 @@ app.post("/payment", async (request, response) => {
     } catch (error) {
         response.status(404).json({ Error: error });
     }
-});
-
-// Deploing
-app.use(express.static(path.join(dirname, "..", "build")));
-app.get("*", (_req, res) => {
-    res.sendFile(path.join(dirname, "..", "build", "index.html"));
 });
 
 const PORT = process.env.PORT || 4000;

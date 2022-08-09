@@ -1,0 +1,18 @@
+.prime-slider {
+    width: 100%;
+
+    .swiper-wrapper {
+        padding: 70%;
+        overflow: hidden;
+        position: relative;
+
+        .swiper-slide {
+            width: 100% !important;
+
+            img {
+                width: 100%;
+                z-index: 33333;
+            }
+        }
+    }
+}

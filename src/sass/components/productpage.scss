@@ -1,0 +1,139 @@
+// import mixins
+@use "../helpers/mixins" as *;
+@use "../vaiables/colors.scss" as *;
+
+.product-page {
+    padding: 20px;
+    .product-container {
+        border-radius: 6px;
+        box-shadow: 0 0 16px 0px #c5c5c598;
+        background-color: #fff;
+        display: flex;
+        column-gap: 30px;
+        padding: 20px;
+        width: 90%;
+        margin: auto;
+
+        @include breakpoints(mobile) {
+            flex-direction: column;
+            width: 95%;
+        }
+        .img-section {
+            width: 50%;
+            border-right: 1px solid #ddd;
+            @include breakpoints(mobile) {
+                border: none;
+                width: 90%;
+            }
+            img {
+                width: 70%;
+                @include breakpoints(mobile) {
+                    width: 100%;
+                }
+            }
+        }
+        .caption-section {
+            padding: 20px;
+            .details {
+                width: 100%;
+
+                .counter {
+                    margin-top: 20px;
+                    display: flex;
+        
+                    p {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 34px;
+                        height: 29px;
+                        border: 1px solid #ddd;
+                        color: rgb(0, 103, 188);
+                    }
+                    span {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 34px;
+                        height: 29px;
+                        background-color: rgb(234, 239, 247);
+                        margin-right: 0;
+                        border: 1px solid #ddd;
+                        font-weight: 600;
+                        cursor: pointer;
+                    }
+                    span:first-of-type {
+                        border-bottom-left-radius:  6px ;
+                        border-top-left-radius:  6px ;
+                    }
+                    span:last-of-type {
+                        border-bottom-right-radius:  6px ;
+                        border-top-right-radius:  6px ;
+                    }
+                }
+                .product-rating {
+                    display: flex;
+                    background-color: #fffdeb;
+                    border-radius: 4px;
+                    width: fit-content;
+                    margin-bottom: 10px;
+                    .starRate {
+                        color: $amazon-collor;
+                    }
+                }
+
+                .title {
+                    font-weight: 600;
+                    font-size: 17px;
+                }
+
+                h3 {
+                    font-weight: 800;
+                    font-size: 19px;
+                }
+
+                .about-item {
+                    margin: 50px 0;
+                    border-top: 1px solid #ddd;
+                    padding: 10px 0;
+                    @include breakpoints(mobile) {
+                        margin: 0;
+                    }
+                    h4 {
+                        font-weight: 600;
+                    }
+                    p {
+                        line-height: 14px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .buttons {
+                border-top: 1px solid #ddd;
+                padding: 15px 0;
+                text-align: center;
+                button {
+                    font-size: 14px;
+                    font-weight: 600;
+                    padding: 2px 6px;
+                    @include breakpoints(mobile) {
+                        margin-left: 15px;
+                        padding: 4px 8px;
+                    }
+                }
+                .save-btn {
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin-left: 30px;
+                    border: 1px solid #ddd;
+                    border-radius: 6px;
+                    padding: 2px 4px;
+                    @include breakpoints(mobile) {
+                        margin-left: 15px;
+                        padding: 4px 8px;
+                    }
+                }
+            }
+        }
+    }
+}

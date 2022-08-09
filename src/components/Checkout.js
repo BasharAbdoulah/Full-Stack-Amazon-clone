@@ -28,6 +28,7 @@ function Checkout() {
                                 price={item.price}
                                 rating={item.rating}
                                 id={item.id}
+                                quantity={item.quantity}
                                 key={Math.random()}
                             />
                         );

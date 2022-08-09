@@ -1,4 +1,4 @@
-.btn {
+.btnn {
   border: 1px solid #a88734;
   border-radius: 3px;
   background-color: #f0c14b;
@@ -9,6 +9,11 @@
 
 .hide {
   display: none;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
 
 .header {
@@ -53,6 +58,7 @@
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
+  text-decoration: none;
 }
 @media (min-width: 1200px) {
   .header .logo-container .bagicon-mobile {
@@ -68,6 +74,10 @@
   .header .logo-container .bagicon-mobile {
     display: none;
   }
+}
+.header .logo-container .bagicon-mobile .option-line-two {
+  margin: 0 5px;
+  font-weight: 800;
 }
 .header .logo-container .MuiSvgIcon-root {
   display: block;
@@ -131,6 +141,7 @@
   .header .header-search .search-icon {
     width: 10%;
     border-radius: 8px;
+    color: #fff;
   }
 }
 .header .header-nav.show {

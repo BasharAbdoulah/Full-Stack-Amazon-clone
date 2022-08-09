@@ -1,25 +1,29 @@
 // import mixins
 @use "../helpers/mixins" as *;
+@use "../vaiables/colors.scss" as *;
 
 .basket {
     display: flex;
     column-gap: 20px;
+    margin-top: 15px;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding: 20px;
+    padding: 20px ;
     overflow: hidden;
     margin-top: 10px;
+    background-color: #f8fbfe;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 7px 0px #0000001a;
 
     @include breakpoints(mobile) {
-        height: 155px;
+        padding: 15px 8px;
+
     }
 
     img {
         @include breakpoints(mobile) {
-            height: 100%;
-            max-width: 155px;
-            width: fit-content;
+            max-width: 40%;
+            width: 32%;
         }
         width: 150px;
     }
@@ -29,34 +33,43 @@
         flex-direction: column;
         justify-content: flex-start;
 
+        strong {
+            font-size: 14px;
+        }
+
         p {
             @include breakpoints(mobile) {
-                font-size: 13px;
+                font-size: 12px;
                 font-weight: 600;
                 margin: 2px;
                 line-height: 15px;
             }
             text-align: left;
-            margin: 10px;
+            margin: 10px ;
             max-width: 250px;
             line-height: 20px;
         }
 
         button {
+            font-size: 14px;
+            width: fit-content;
+            margin: 4px;
             @include breakpoints(mobile) {
                 font-size: 11px;
             }
-            width: fit-content;
         }
     }
     .basket-item-rating {
+        margin: 10px 0;
         display: flex;
-
-        p {
+        background-color: #fffdeb;
+        border-radius: 4px;
+        width: fit-content;
+        .starRate {
+            color: $amazon-collor;
             @include breakpoints(mobile) {
-                margin: 0 0 5px;
+                font-size: 16px;
             }
-            margin: 10px 0px;
         }
 
     }

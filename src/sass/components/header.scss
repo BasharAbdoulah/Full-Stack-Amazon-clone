@@ -7,6 +7,11 @@
     display: none;
 }
 
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+    }
+
 .header {
     background-color: #303a47;
     width: 100%;
@@ -50,6 +55,7 @@
             flex-grow: 1;
             display: flex;
             justify-content: flex-end;
+            text-decoration: none;
             @include breakpoints(large) {
                 display: none;
             }
@@ -58,6 +64,11 @@
             }
             @include breakpoints(small) {
                 display: none;
+            }
+
+            .option-line-two {
+                margin: 0 5px;
+                font-weight: 800;
             }
         }
 
@@ -106,6 +117,7 @@
             @include breakpoints(mobile) {
                 width: 10%;
                 border-radius: 8px;
+                color: #fff;
             }
             background-color: $amazon-collor;
             color: #000;

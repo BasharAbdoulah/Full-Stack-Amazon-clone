@@ -1,6 +1,7 @@
 export const initialState = {
     basket: [],
     newUsername: "",
+    clickedProduct: {},
 };
 
 // Selector
@@ -24,6 +25,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 newUsername: action.userName,
+            };
+        case "PRODUCT_CLICK":
+            return {
+                ...state,
+                clickedProduct: action.proprtys,
             };
 
         case "REMOVE_FROM_BASKET":

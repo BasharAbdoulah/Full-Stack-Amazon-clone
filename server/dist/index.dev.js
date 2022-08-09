@@ -8,8 +8,6 @@ var _dotenv = _interopRequireDefault(require("dotenv"));
 
 var _bodyParser = _interopRequireDefault(require("body-parser"));
 
-var _cors = _interopRequireDefault(require("cors"));
-
 var _Products = _interopRequireDefault(require("./models/Products.js"));
 
 var _mongoose = _interopRequireDefault(require("mongoose"));
@@ -32,9 +30,8 @@ app.use(_bodyParser["default"].urlencoded({
 }));
 app.use((0, _express.json)());
 
-_dotenv["default"].config();
+_dotenv["default"].config(); // Connect to DB
 
-app.use((0, _cors["default"])()); // Connect to DB
 
 _mongoose["default"].connect("".concat(process.env.MONGO_URL), {
   useNewUrlParser: true,
@@ -43,7 +40,12 @@ _mongoose["default"].connect("".concat(process.env.MONGO_URL), {
   return console.log("DB is conccted");
 })["catch"](function (err) {
   return console.log(err);
-});
+}); // app.get("/", async (req, res) => {
+//     res.send("Hello from server");
+//     const orders = await productModel.find({});
+//     res.send(orders);
+// });
+
 
 app.get("/orders", function _callee(req, res) {
   var orders;
@@ -57,23 +59,24 @@ app.get("/orders", function _callee(req, res) {
 
         case 3:
           orders = _context.sent;
+          res.send(orders);
           res.status(200).send(orders);
-          _context.next = 10;
+          _context.next = 11;
           break;
 
-        case 7:
-          _context.prev = 7;
+        case 8:
+          _context.prev = 8;
           _context.t0 = _context["catch"](0);
           res.status(404).json({
             message: _context.t0.message
           });
 
-        case 10:
+        case 11:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[0, 7]]);
+  }, null, null, [[0, 8]]);
 }); // API routes
 
 app.post("/payment", function _callee2(request, response) {
