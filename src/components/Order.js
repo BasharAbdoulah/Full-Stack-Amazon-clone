@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../sass/components/order.scss";
 import BasketItem from "./BasketItem";
-import moment from "moment";
-import { getBasketTotal } from "./reducer";
 import CurrencyFormat from "react-currency-format";
-import { useStateValue } from "./StateProvider";
 
 function Order({ order }) {
-    const [{ basket, user }] = useStateValue();
-
     return (
         <div className="order">
             <div className="order-details">

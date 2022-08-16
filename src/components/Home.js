@@ -1,10 +1,20 @@
+import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
-import primeImg from "../images/amazon-prime.jpeg";
+import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 import "../sass/components/home.scss";
 import "../sass/components/spinner.scss";
-import Product from "./Product";
 import Slider from "./Slider";
 import { useStateValue } from "./StateProvider";
+import group1 from "../images/Groups images/cgildren stuff.jpeg";
+import group2 from "../images/Groups images/books.jpeg";
+import group3 from "../images/Groups images/download.jpeg";
+import group4 from "../images/Groups images/health care.jpeg";
+import group5 from "../images/Groups images/kitchen stuff.jpeg";
+import group6 from "../images/Groups images/women clothes.jpeg";
+import group7 from "../images/Groups images/mens clothes.jpeg";
+import group8 from "../images/Groups images/laptobs.jpeg";
+import group9 from "../images/Groups images/images.jpeg";
+import { Link } from "react-router-dom";
 
 export const productsContext = createContext();
 
@@ -12,6 +22,7 @@ function Home() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [{ basket, user }, dispatch] = useStateValue();
+    const [data, setData] = useState(null);
 
     // fetch orders for current user
     useEffect(() => {
@@ -38,98 +49,81 @@ function Home() {
         fetchData();
     }, [user]);
 
-    // Fetch the products from API
-    useEffect(() => {
-        setLoading(true);
-        fetch("https://fakestoreapi.com/products")
-            .then((res) => res.json())
-            .then((json) => setProducts(json));
-
-        if (products) {
-            setLoading(false);
-        }
-    }, []);
-
     return (
         <productsContext.Provider value={products}>
             <div className="home">
-                {loading && (
-                    <div className="spinner-container">
-                        <div className="loading-spinner"></div>
-                    </div>
-                )}
-
                 <Slider />
                 <div className="home-container">
                     <div className="home-row">
-                        {products.slice(0, 2).map((prod) => {
-                            return (
-                                <Product
-                                    key={Math.random(5)}
-                                    title={prod.title}
-                                    img={prod.image}
-                                    price={prod.price}
-                                    rate={prod.rating.rate}
-                                    id={prod.id}
-                                />
-                            );
-                        })}
+                        <div className="products-group">
+                            <h3>Children stuff</h3>
+                            <Link to="/homeGroup">
+                                <img src={group1} alt="group" />
+                                <KeyboardDoubleArrowUpIcon />
+                            </Link>
+                        </div>
+                        <div className="products-group">
+                            <h3>Books & Reading</h3>
+                            <Link to="/homeGroup">
+                                <img src={group2} alt="group" />
+                                <KeyboardDoubleArrowUpIcon />
+                            </Link>
+                        </div>
+                        <div className="products-group">
+                            <h3>Gaming Tools</h3>
+                            <Link to="/homeGroup">
+                                <img src={group3} alt="group" />
+                                <KeyboardDoubleArrowUpIcon />
+                            </Link>
+                        </div>
                     </div>
+
                     <div className="home-row">
-                        {products.slice(2, 5).map((prod) => {
-                            return (
-                                <Product
-                                    key={Math.random(5)}
-                                    title={prod.title}
-                                    img={prod.image}
-                                    price={prod.price}
-                                    rate={prod.rating.rate}
-                                    id={prod.id}
-                                />
-                            );
-                        })}
+                        <div className="products-group">
+                            <h3>Health & Personal Care</h3>
+                            <Link to="/homeGroup">
+                                <img src={group4} alt="group" />
+                                <KeyboardDoubleArrowUpIcon />
+                            </Link>
+                        </div>
+                        <div className="products-group">
+                            <h3>Kitchen Tools</h3>
+                            <Link to="/homeGroup">
+                                <img src={group5} alt="group" />
+                                <KeyboardDoubleArrowUpIcon />
+                            </Link>
+                        </div>
+                        <div className="products-group">
+                            <h3>Women Clothes</h3>
+                            <Link to="/homeGroup">
+                                <img src={group6} alt="group" />
+                                <KeyboardDoubleArrowUpIcon />
+                            </Link>
+                        </div>
                     </div>
+
                     <div className="home-row">
-                        {products.slice(5, 9).map((prod) => {
-                            return (
-                                <Product
-                                    key={Math.random(5)}
-                                    title={prod.title}
-                                    img={prod.image}
-                                    price={prod.price}
-                                    rate={prod.rating.rate}
-                                    id={prod.id}
-                                />
-                            );
-                        })}
-                    </div>
-                    <div className="home-row">
-                        {products.slice(14, 19).map((prod) => {
-                            return (
-                                <Product
-                                    key={Math.random(5)}
-                                    title={prod.title}
-                                    img={prod.image}
-                                    price={prod.price}
-                                    rate={prod.rating.rate}
-                                    id={prod.id}
-                                />
-                            );
-                        })}
-                    </div>
-                    <div className="home-row">
-                        {products.slice(13, 14).map((prod) => {
-                            return (
-                                <Product
-                                    key={Math.random(5)}
-                                    title={prod.title}
-                                    img={prod.image}
-                                    price={prod.price}
-                                    rate={prod.rating.rate}
-                                    id={prod.id}
-                                />
-                            );
-                        })}
+                        <div className="products-group">
+                            <h3>Men's Clothes</h3>
+                            <Link to="/homeGroup">
+                                <img src={group7} alt="group" />
+                                <KeyboardDoubleArrowUpIcon />
+                            </Link>
+                        </div>
+                        <div className="products-group">
+                            <h3>Labtop & Tablet </h3>
+                            <Link to="/homeGroup">
+                                <img src={group8} alt="group" />
+                                <KeyboardDoubleArrowUpIcon />
+                            </Link>
+                        </div>
+                        <div className="products-group">
+                            <h3>Skin Care</h3>
+                            <Link to="/homeGroup">
+                                <img src={group9} alt="group" />
+                                <KeyboardDoubleArrowUpIcon />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

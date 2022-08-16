@@ -1,5 +1,9 @@
+
+.App {
+  position: relative;
+}
 body {
-  background-color: rgb(246, 246, 246) !important;
+  background-color: #f3fbff !important;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

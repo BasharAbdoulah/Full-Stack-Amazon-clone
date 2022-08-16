@@ -1,0 +1,241 @@
+
+// import mixins
+@use "../helpers/mixins" as *;
+
+
+.homeGroup {
+
+    // Mobile filter start
+    .mo-filter {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #f9fdff;
+        padding: 10px;
+        display: none;
+        position: sticky;
+        top: 0px;
+        left: 0px;
+        z-index: 3332;
+        @include breakpoints(mobile) {
+            display: flex;
+        }
+
+
+        .mo-filter-container {
+            position: relative;
+            width: 100%;
+          & >  .mo-filter-section {
+            background-color: #f9fdff;
+            padding: 5rem 20px 10rem ;
+            border-radius: 6px;
+            transition: all 0.4s ease-in-out;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: 100%;
+            z-index: 345;
+            display: none;
+            &.show {
+                display: block;
+            }
+            .mo-categories {
+                .mo-form {
+                    .mo-label {
+                        margin-left: 1rem;
+                    }
+                    .mo-input {
+                        width: 1rem;
+                        height: 1rem;
+                    }
+                }
+
+            }
+        
+            h4 {
+                font-size: 16px;
+                font-weight: 800;
+                border-bottom: 1px solid #ddd;
+                padding: 0.5rem 0;
+            }
+            p {
+                font-size: 14px;
+                background-color: #f6fbfd;
+                width: fit-content;
+                padding: 0 5px;
+                border-radius: 6px;
+                cursor: pointer;
+                margin: 5px;
+                transition: all 0.4s ease;
+                font-weight: 600;
+            }
+            p:hover {
+                background-color: #3aa6ff20;
+            }
+
+            .star {
+                color: #f0c14b;
+                font-size: 1.4rem;
+                margin: 0;
+            }
+        }
+        }
+
+        h4 {
+            font-size: 14px;
+        }
+        .filter-content {
+            display: flex;
+            align-items: center;
+            background-color: #e6ebee;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+
+            .d-arrow {
+                color: #2196F3;
+            }
+
+            p {
+                margin: 0;
+                font-weight: 600;
+                font-size: 14px;
+                margin-right: 2rem;
+            }
+        }
+
+    }
+        // Mobile filter end
+    .homeGroup-container {
+        width: 97%;
+        margin: 1rem auto;
+        display: flex;
+        flex-direction: row-reverse;
+        column-gap: 1rem;
+        position: relative;
+        overflow: hidden;
+        @include breakpoints(mobile) {
+            justify-content: center;
+            width: 92%;
+        }
+
+        .homeGroup-row {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 1rem;
+            row-gap: 1rem;
+            @include breakpoints(mobile) {
+                flex-wrap: nowrap;
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+        .filter-section {
+            background-color: #f9fdff;
+            padding: 220px 20px ;
+            border-radius: 6px;
+            width: 17%;
+            transition: all 0.4s ease-in-out;
+            @include breakpoints(mobile) {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                padding: 60px 20px;
+                display: none;
+
+            }
+            @include breakpoints(small) {
+                width: 38%;
+            }
+            &.show {
+                display: block;
+            }
+            .categories {
+
+                form {
+                    margin-bottom: 20px;
+                    .container {
+                        display: block;
+                        position: relative;
+                        padding-left: 25px;
+                        margin-bottom: 8px;
+                        cursor: pointer;
+                        font-size: 16px;
+                        -webkit-user-select: none;
+                        user-select: none;
+                        font-weight: 600;
+                      }
+                      .container:hover input ~ .checkmark {
+                        background-color: #ccc;
+                      }
+                      .container input:checked ~ .checkmark {
+                        background-color: #0068bd;
+                      }
+                    input{
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+                    }
+                    .checkmark {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 18px;
+                        width: 18px;
+                        background-color: #eee;
+                        border-radius: 3px;
+                      }
+                      .checkmark:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                      }
+                      .container .checkmark:after {
+                        left: 6px;
+                        top: 1px;
+                        width: 6px;
+                        height: 13px;
+                        border: solid white;
+                        border-width: 0 3px 3px 0;
+                        transform: rotate(41deg);
+                      }
+                      .container input:checked ~ .checkmark:after {
+                        display: block;
+                      }
+                }
+
+            }
+        
+            h4 {
+                font-size: 16px;
+                font-weight: 800;
+                border-bottom: 1px solid #ddd;
+                padding: 0.5rem 0;
+            }
+            p {
+                font-size: 14px;
+                background-color: #f6fbfd;
+                width: fit-content;
+                padding: 0 5px;
+                border-radius: 6px;
+                cursor: pointer;
+                margin: 5px;
+                transition: all 0.4s ease;
+                font-weight: 600;
+            }
+            p:hover {
+                background-color: #3aa6ff20;
+            }
+
+            .star {
+                color: #f0c14b;
+                font-size: 1.4rem;
+                margin: 0;
+            }
+        }
+    }
+}

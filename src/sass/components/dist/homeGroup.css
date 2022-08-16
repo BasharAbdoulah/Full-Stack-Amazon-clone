@@ -1,0 +1,220 @@
+.homeGroup .mo-filter {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f9fdff;
+  padding: 10px;
+  display: none;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  z-index: 3332;
+}
+@media (max-width: 767px) {
+  .homeGroup .mo-filter {
+    display: flex;
+  }
+}
+.homeGroup .mo-filter .mo-filter-container {
+  position: relative;
+  width: 100%;
+}
+.homeGroup .mo-filter .mo-filter-container > .mo-filter-section {
+  background-color: #f9fdff;
+  padding: 5rem 20px 10rem;
+  border-radius: 6px;
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  z-index: 345;
+  display: none;
+}
+.homeGroup .mo-filter .mo-filter-container > .mo-filter-section.show {
+  display: block;
+}
+.homeGroup .mo-filter .mo-filter-container > .mo-filter-section .mo-categories .mo-form .mo-label {
+  margin-left: 1rem;
+}
+.homeGroup .mo-filter .mo-filter-container > .mo-filter-section .mo-categories .mo-form .mo-input {
+  width: 1rem;
+  height: 1rem;
+}
+.homeGroup .mo-filter .mo-filter-container > .mo-filter-section h4 {
+  font-size: 16px;
+  font-weight: 800;
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+.homeGroup .mo-filter .mo-filter-container > .mo-filter-section p {
+  font-size: 14px;
+  background-color: #f6fbfd;
+  width: fit-content;
+  padding: 0 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 5px;
+  transition: all 0.4s ease;
+  font-weight: 600;
+}
+.homeGroup .mo-filter .mo-filter-container > .mo-filter-section p:hover {
+  background-color: #3aa6ff20;
+}
+.homeGroup .mo-filter .mo-filter-container > .mo-filter-section .star {
+  color: #f0c14b;
+  font-size: 1.4rem;
+  margin: 0;
+}
+.homeGroup .mo-filter h4 {
+  font-size: 14px;
+}
+.homeGroup .mo-filter .filter-content {
+  display: flex;
+  align-items: center;
+  background-color: #e6ebee;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.homeGroup .mo-filter .filter-content .d-arrow {
+  color: #2196F3;
+}
+.homeGroup .mo-filter .filter-content p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  margin-right: 2rem;
+}
+.homeGroup .homeGroup-container {
+  width: 97%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: row-reverse;
+  column-gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .homeGroup .homeGroup-container {
+    justify-content: center;
+    width: 92%;
+  }
+}
+.homeGroup .homeGroup-container .homeGroup-row {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+@media (max-width: 767px) {
+  .homeGroup .homeGroup-container .homeGroup-row {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+.homeGroup .homeGroup-container .filter-section {
+  background-color: #f9fdff;
+  padding: 220px 20px;
+  border-radius: 6px;
+  width: 17%;
+  transition: all 0.4s ease-in-out;
+}
+@media (max-width: 767px) {
+  .homeGroup .homeGroup-container .filter-section {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 60px 20px;
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .homeGroup .homeGroup-container .filter-section {
+    width: 38%;
+  }
+}
+.homeGroup .homeGroup-container .filter-section.show {
+  display: block;
+}
+.homeGroup .homeGroup-container .filter-section .categories form {
+  margin-bottom: 20px;
+}
+.homeGroup .homeGroup-container .filter-section .categories form .container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  user-select: none;
+  font-weight: 600;
+}
+.homeGroup .homeGroup-container .filter-section .categories form .container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.homeGroup .homeGroup-container .filter-section .categories form .container input:checked ~ .checkmark {
+  background-color: #0068bd;
+}
+.homeGroup .homeGroup-container .filter-section .categories form input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.homeGroup .homeGroup-container .filter-section .categories form .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+  border-radius: 3px;
+}
+.homeGroup .homeGroup-container .filter-section .categories form .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.homeGroup .homeGroup-container .filter-section .categories form .container .checkmark:after {
+  left: 6px;
+  top: 1px;
+  width: 6px;
+  height: 13px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(41deg);
+}
+.homeGroup .homeGroup-container .filter-section .categories form .container input:checked ~ .checkmark:after {
+  display: block;
+}
+.homeGroup .homeGroup-container .filter-section h4 {
+  font-size: 16px;
+  font-weight: 800;
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+.homeGroup .homeGroup-container .filter-section p {
+  font-size: 14px;
+  background-color: #f6fbfd;
+  width: fit-content;
+  padding: 0 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 5px;
+  transition: all 0.4s ease;
+  font-weight: 600;
+}
+.homeGroup .homeGroup-container .filter-section p:hover {
+  background-color: #3aa6ff20;
+}
+.homeGroup .homeGroup-container .filter-section .star {
+  color: #f0c14b;
+  font-size: 1.4rem;
+  margin: 0;
+}

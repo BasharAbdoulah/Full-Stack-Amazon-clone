@@ -1,8 +1,8 @@
 @use "../vaiables/colors.scss" as *;
-
+// import mixins
+@use "../helpers/mixins" as *;
 
 .product {
-    width: 100%;
     background-color: #f9fdff;
     padding: 10px;
     min-width: 100px;
@@ -11,8 +11,16 @@
     border-radius: 6px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    width: 32%;
     align-items: center;
     box-shadow: 0 0 16px 0px #c5c5c598;
+    @include breakpoints(small) {
+        flex-basis: 47%;
+    }
+    @include breakpoints(mobile) {
+        width: 100%;
+    }
     .product-view {
         height: 100%;
         width: 50%;
@@ -21,11 +29,11 @@
         justify-content: center;
         align-items: center;
          a {
-            height: 60%;
+            max-height: 80%;
             width: 100%;
             text-align: center;
             img {
-                height: 100%;
+                max-height: 100%;
                 max-width: 90%;
             }
          }

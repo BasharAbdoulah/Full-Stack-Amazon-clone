@@ -29,9 +29,10 @@
         row-gap: 10px;
 
         a {
-            width: 100%;
+            width: fit-content;
             text-align: left;
         }
+
     }
 
 
@@ -47,7 +48,33 @@
                 font-size: 30px;
             }
         }
+        .mo-person-box {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-left: 1rem;
+            @include breakpoints(large) {
+                display: none;
+            }
+            @include breakpoints(medium) {
+                display: none;
+            }
+            @include breakpoints(small) {
+                display: none;
+            }
 
+            .mo-person {
+                color: #fff;
+                font-size: 2rem;
+                cursor: pointer;
+            }
+            .mo-person-name {
+                color: #fff;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                font-size: 13px;
+            }
+        }
         .bagicon-mobile {
             text-align: right;
             color: #fff;
@@ -149,7 +176,7 @@
             flex-direction: column-reverse;
             align-items: center;
             top: 0;
-            left: -500px;
+            left: -800px;
             justify-content: center;
             row-gap: 10px;
 

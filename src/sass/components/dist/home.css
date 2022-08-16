@@ -4,32 +4,66 @@
 .home .home-container {
   width: 90%;
   margin: auto;
-}
-
-.home-image {
   position: relative;
-  width: 100%;
-  z-index: -1;
-  margin-bottom: -200px;
-  mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
 }
 @media (max-width: 767px) {
-  .home-image {
-    margin-bottom: -60px;
+  .home .home-container {
+    width: 96%;
   }
 }
-
-.home-row {
+.home .home-container .home-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   column-gap: 20px;
   row-gap: 20px;
-  z-index: 1;
+  z-index: 22;
   margin: 20px 10px;
 }
 @media (max-width: 767px) {
-  .home-row {
+  .home .home-container .home-row {
     flex-direction: column;
+  }
+}
+.home .home-container .home-row .products-group {
+  background-color: #fff;
+  padding: 20px;
+  flex-basis: 35%;
+  height: 25rem;
+}
+@media (max-width: 767px) {
+  .home .home-container .home-row .products-group {
+    width: 100%;
+  }
+}
+.home .home-container .home-row .products-group h3 {
+  width: 100%;
+  font-size: 22px;
+  font-weight: 800;
+}
+.home .home-container .home-row .products-group a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home .home-container .home-row .products-group a img {
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 18rem;
+}
+.home .carousel {
+  margin-bottom: -200px;
+  position: relative;
+  z-index: 0;
+  mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+}
+.home .carousel .home-image {
+  height: 700px;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .home .carousel .home-image {
+    margin-bottom: -60px;
+    height: 500px;
   }
 }

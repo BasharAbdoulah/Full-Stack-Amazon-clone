@@ -2,14 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import "../sass/components/header.scss";
 import logo from "../images/358-3584545_rolling-pin-clip-art.png";
 import SearchIcon from "@mui/icons-material/Search";
-
+import PersonPinCircleOutlinedIcon from "@mui/icons-material/PersonPinCircleOutlined";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBasket";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { auth } from "../firebaseFiles";
 import MenuIcon from "@mui/icons-material/Menu";
 
 function Header() {
+    const history = useNavigate();
     const useRefe = useRef();
     const [{ basket, newUsername, user }, dispatch] = useStateValue();
     const [isSignIn, setIsSignIn] = useState(false);
@@ -49,6 +50,15 @@ function Header() {
                     <ShoppingBagIcon className="shoping-bag" />
                     <span className="option-line-two">{basket.length}</span>
                 </Link>
+                <div className="mo-person-box">
+                    <p className="mo-person-name">
+                        {isSignIn ? newUsername : "Guest"}
+                    </p>
+                    <PersonPinCircleOutlinedIcon
+                        onClick={() => history("/login")}
+                        className="mo-person"
+                    />
+                </div>
                 <Link to="/">
                     <img className="header-logo" src={logo} />
                 </Link>

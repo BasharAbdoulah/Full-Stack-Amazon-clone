@@ -15,23 +15,22 @@ function Orders() {
                     "https://amazon-clone-b.herokuapp.com/orders"
                 );
                 const json = await respon.json();
+                // Filtring current user orders
                 const ordersForEmail = await json.filter(
                     (item) => item.order.email === user.email
                 );
-
+                // I set orders who came from DB for current user
                 setOrders(ordersForEmail.map((item) => item.order));
             } catch (error) {
                 console.log(error.message);
             }
         };
-
         fetchData();
     }, [user]);
 
     return (
         <div className="orders">
             <h2>The Orders</h2>
-
             <div className="orders-container">
                 {user ? (
                     orders?.map((order) => (
