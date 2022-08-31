@@ -1,0 +1,34 @@
+@use "../vaiables/colors.scss" as *;
+// import mixins
+@use "../helpers/mixins" as *;
+
+.slider {
+    @include breakpoints(mobile) {
+        display: none;
+    }
+    h2 {
+        text-align: center;
+    }
+    .slider__container {
+        background-color: #fff;
+        padding: 15px;
+
+        button {
+            &::before {
+                font-size: 40px;
+                color: $amazon-collor;
+            }
+        }
+        button.slick-prev {
+            left: -41px;
+        }
+        .slider__item {
+            border-left: 1px solid #ddd;
+            .slide__img {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}

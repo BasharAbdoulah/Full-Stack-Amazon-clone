@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./sass/layout/globalRules.scss";
 import "./index.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Checkout from "./components/Checkout";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -23,6 +25,7 @@ const promise = loadStripe(PUBLIC_KEY);
 
 function App() {
     const [{}, dispatch] = useStateValue();
+    const overLay = useRef();
 
     useEffect(() => {
         // will only run once app component loads
@@ -42,6 +45,14 @@ function App() {
             }
         });
     }, []);
+
+    // const makeOverLay = () => {
+    //     overLay.current.style.display = "block";
+    // };
+    // const hideOverLay = () => {
+    //     overLay.current.style.display = "block";
+    // };
+
     return (
         <Router>
             <div className="App">
@@ -58,7 +69,8 @@ function App() {
                         path="/homeGroup"
                         element={
                             <>
-                                <Header /> <HomeGroup /> <Footer />
+                                <Header /> <HomeGroup />
+                                <Footer />
                             </>
                         }
                     />

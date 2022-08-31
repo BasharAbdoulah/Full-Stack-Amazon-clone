@@ -20,6 +20,7 @@ function Header() {
         setIsSignIn(false);
         if (user) {
             auth.signOut();
+            window.location.reload();
         }
     };
 
